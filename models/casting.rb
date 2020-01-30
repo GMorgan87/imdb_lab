@@ -22,11 +22,22 @@ class Casting
     @id = results[0]["id"].to_i
   end
 
+  def delete()
+    sql = "DELETE FROM castings WHERE id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+  end
+
+
   def self.all
     sql = "SELECT * FROM castings"
     castings = SqlRunner.run(sql)
     return castings.map {|casting| Casting.new(casting)}
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM castings"
+    SqlRunner.run(sql)
+  end
 
 end
