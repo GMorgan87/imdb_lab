@@ -19,13 +19,13 @@ Star.delete_all()
   star2 = Star.new({"first_name" => "Christopher", "last_name" => "Lambert"})
   star2.save()
 
-  casting1 = Casting.new({"movie_id" => movie1.id, "star_id" => star1.id})
+  casting1 = Casting.new({"movie_id" => movie1.id, "star_id" => star1.id, "fee" => 20000000})
   casting1.save()
 
-  casting2 = Casting.new({"movie_id" => movie2.id, "star_id" => star1.id})
+  casting2 = Casting.new({"movie_id" => movie2.id, "star_id" => star1.id, "fee" => 4000000})
   casting2.save()
 
-  casting3 = Casting.new({"movie_id" => movie1.id, "star_id" => star2.id})
+  casting3 = Casting.new({"movie_id" => movie1.id, "star_id" => star2.id, "fee" => 1500000})
   casting3.save()
 
 binding.pry()
