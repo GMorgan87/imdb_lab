@@ -22,6 +22,12 @@ class Star
     @id = results[0]["id"].to_i
   end
 
+  def self.all
+    sql = "SELECT * FROM stars"
+    stars = SqlRunner.run(sql)
+    return stars.map {|star| Star.new(star)}
+  end
+
 
 
 end
